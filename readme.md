@@ -113,7 +113,7 @@ If the Elevation Fitness API is having trouble, you might get a 5xx error. `500`
 
 # Api Endpoints
 
-- [Tracked Workouts](elevationfitness/elevationfit.com-api-docs/blob/master/sections/TrackedWorkouts.md)
+- [Tracked Workouts](https://github.com/elevationfitness/elevationfit.com-api-docs/blob/master/sections/TrackedWorkouts.md)
 
 # License
 
