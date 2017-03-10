@@ -2,7 +2,7 @@
 
 Welcome to the Elevation Fitness API! If you're looking to integrate your application with Elevation Fitness or create your own application in concert with data inside of Elevation Fitness, you are in the right place. 
 
-# Who Do You Authenticate With Our API
+# How Do You Authenticate With Our API
 
 (Details Coming Soon.....)
 
