@@ -7,7 +7,7 @@ Endpoints:
 - [Get All Tracked Workouts By User Id](#get-all-tracked-workouts-by-user-id)
 - [Get All Tracked Workout By Assigned Workout Id And Date](#get-all-tracked-workouts-by-assigned-workout-id-and-date)
 - [Return A Complete Tracked Workout Object](#return-a-complete-tracked-workout-object)
-- [Create New Tracked Workout](#create-new-tracked-workout)
+- [Create New Tracked Workout - Payload](#create-new-tracked-workout-payload)
 
 
 ## Get All Tracked Workouts
@@ -693,5 +693,225 @@ For our example here lets use the [Get Tracked Workout By Id](#get-tracked-worko
 curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://elevationfit.com/api/v1/$ACCOUNT_ID/trackedworkouts/890?full=true
 ```
 
-## Create New Tracked Workout
+## Create New Tracked Workout - Payload
 
+This is the core api call to track a workout. We post in a rather complex json object to this API. Best to see the two examples below. There currently is no validation on this API call. Make sure to post in a complete and correct object.
+
+One thing to note is we do not update tracked workouts. We delete the old one and replace with a new one. You use this call for tracking a new workout and for "updating" (delete and insert).
+
+This api call will return the ID (or new ID) of the tracked workout. If you would like more data you can include ```?return=object``` to the url and this API call will return a complete tracked workout object. 
+
+* `POST https://elevationfit.com/api/v1/4/trackedworkouts/payload`
+
+* `POST https://elevationfit.com/api/v1/4/trackedworkouts/payload?return=object`
+
+###### Curl Example
+
+``` shell
+curl -X POST \ 
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H 'Content-Type: application/json' \
+  -H 'User-Agent: MyApp (yourname@example.com)' \
+  -d '{ json object below..... }' \
+  https://elevationfit.com/api/v1/4/trackedworkouts/payload
+```
+
+###### JSON Payload Example
+
+Here is a bigger example of the Payload : https://gist.github.com/cloudmanic/6b267cacabd58432b9af715a0863972e
+
+``` json
+{
+	"AssignedWorkoutsId": "270",
+	"AssignedWorkoutsClientId": "6",
+	"TrackedWorkoutsDate": "03\/08\/2017",
+	"Exercises": {
+		"warmup": [{
+			"TrackedExercisesId": "17942",
+			"AssignedExercisesAttrType": "Distance",
+			"AssignedExercisesCol0": "Distance (mi)",
+			"AssignedExercisesCol1": "Time (mins)",
+			"AssignedExercisesCol2": "Rest (mins)",
+			"AssignedExercisesCol3": "Intensity (%)",
+			"AssignedExercisesExerciseId": "445",
+			"AssignedExercisesId": "13748",
+			"AssignedExercisesNote": "",
+			"TrackedExercisesNote": "",
+			"AssignedExercisesOrder": 0,
+			"AssignedExercisesSuperNum": "0",
+			"AssignedExercisesSuperSet": "No",
+			"AssignedExercisesType": "Warmup",
+			"AssignedExercisesWorkoutId": "270",
+			"Attrs": [{
+				"AssignedAttrsAttr0": 2,
+				"AssignedAttrsAttr1": "14:00",
+				"AssignedAttrsAttr2": "1:00",
+				"AssignedAttrsAttr3": 75,
+				"TrackedAttrsAttr0": 0,
+				"TrackedAttrsAttr1": "14:00",
+				"TrackedAttrsAttr2": "0:00",
+				"TrackedAttrsAttr3": 0,
+				"AssignedAttrsId": "42492",
+				"AssignedAttrsExerciseId": "13748",
+				"AssignedAttrsOrder": 0
+			}]
+		}],
+		"normal": [{
+			"TrackedExercisesId": "17946",
+			"AssignedExercisesAttrType": "Reps",
+			"AssignedExercisesCol0": "Reps (ea)",
+			"AssignedExercisesCol1": "Weight (lbs)",
+			"AssignedExercisesCol2": "Rest (mins)",
+			"AssignedExercisesCol3": "Intensity (%)",
+			"AssignedExercisesExerciseId": "132",
+			"AssignedExercisesId": "2012",
+			"AssignedExercisesNote": "",
+			"TrackedExercisesNote": "",
+			"AssignedExercisesOrder": 4,
+			"AssignedExercisesSuperNum": "8",
+			"AssignedExercisesSuperSet": "Yes",
+			"AssignedExercisesType": "Normal",
+			"AssignedExercisesWorkoutId": "270",
+			"Attrs": [{
+				"AssignedAttrsAttr0": 15,
+				"AssignedAttrsAttr1": 20,
+				"AssignedAttrsAttr2": "0:30",
+				"AssignedAttrsAttr3": 75,
+				"TrackedAttrsAttr0": 15,
+				"TrackedAttrsAttr1": 20,
+				"TrackedAttrsAttr2": "0:30",
+				"TrackedAttrsAttr3": 75,
+				"AssignedAttrsId": "27603",
+				"AssignedAttrsExerciseId": "2012",
+				"AssignedAttrsOrder": 0
+			}, {
+				"AssignedAttrsAttr0": 15,
+				"AssignedAttrsAttr1": 20,
+				"AssignedAttrsAttr2": "0:30",
+				"AssignedAttrsAttr3": 75,
+				"TrackedAttrsAttr0": 15,
+				"TrackedAttrsAttr1": 20,
+				"TrackedAttrsAttr2": "0:30",
+				"TrackedAttrsAttr3": 75,
+				"AssignedAttrsId": "29322",
+				"AssignedAttrsExerciseId": "2012",
+				"AssignedAttrsOrder": 1
+			}]
+		}, {
+			"TrackedExercisesId": "17947",
+			"AssignedExercisesAttrType": "Reps",
+			"AssignedExercisesCol0": "Reps (ea)",
+			"AssignedExercisesCol1": "Weight (lbs)",
+			"AssignedExercisesCol2": "Rest (mins)",
+			"AssignedExercisesCol3": "Intensity (%)",
+			"AssignedExercisesExerciseId": "141",
+			"AssignedExercisesId": "6861",
+			"AssignedExercisesNote": "",
+			"TrackedExercisesNote": "",
+			"AssignedExercisesOrder": 5,
+			"AssignedExercisesSuperNum": "8",
+			"AssignedExercisesSuperSet": "Yes",
+			"AssignedExercisesType": "Normal",
+			"AssignedExercisesWorkoutId": "270",
+			"Attrs": [{
+				"AssignedAttrsAttr0": 15,
+				"AssignedAttrsAttr1": 25,
+				"AssignedAttrsAttr2": "0:30",
+				"AssignedAttrsAttr3": 75,
+				"TrackedAttrsAttr0": 0,
+				"TrackedAttrsAttr1": 0,
+				"TrackedAttrsAttr2": "0:00",
+				"TrackedAttrsAttr3": 0,
+				"AssignedAttrsId": "21212",
+				"AssignedAttrsExerciseId": "6861",
+				"AssignedAttrsOrder": 0
+			}, {
+				"AssignedAttrsAttr0": 15,
+				"AssignedAttrsAttr1": 25,
+				"AssignedAttrsAttr2": "0:30",
+				"AssignedAttrsAttr3": 75,
+				"TrackedAttrsAttr0": 0,
+				"TrackedAttrsAttr1": 0,
+				"TrackedAttrsAttr2": "0:00",
+				"TrackedAttrsAttr3": 0,
+				"AssignedAttrsId": "29382",
+				"AssignedAttrsExerciseId": "6861",
+				"AssignedAttrsOrder": 1
+			}]
+		}],
+		"cooldown": [{
+			"TrackedExercisesId": "17956",
+			"AssignedExercisesAttrType": "Reps",
+			"AssignedExercisesCol0": "Reps (ea)",
+			"AssignedExercisesCol1": "Weight (lbs)",
+			"AssignedExercisesCol2": "Rest (mins)",
+			"AssignedExercisesCol3": "Intensity (%)",
+			"AssignedExercisesExerciseId": "34318",
+			"AssignedExercisesId": "13752",
+			"AssignedExercisesNote": "",
+			"TrackedExercisesNote": "",
+			"AssignedExercisesOrder": 24,
+			"AssignedExercisesSuperNum": "0",
+			"AssignedExercisesSuperSet": "No",
+			"AssignedExercisesType": "Cool Down",
+			"AssignedExercisesWorkoutId": "270",
+			"Attrs": [{
+				"AssignedAttrsAttr0": 1,
+				"AssignedAttrsAttr1": 25,
+				"AssignedAttrsAttr2": "1:00",
+				"AssignedAttrsAttr3": 75,
+				"TrackedAttrsAttr0": 0,
+				"TrackedAttrsAttr1": 0,
+				"TrackedAttrsAttr2": "0:00",
+				"TrackedAttrsAttr3": 0,
+				"AssignedAttrsId": "42500",
+				"AssignedAttrsExerciseId": "13752",
+				"AssignedAttrsOrder": 0
+			}]
+		}, {
+			"TrackedExercisesId": "17943",
+			"AssignedExercisesAttrType": "Reps",
+			"AssignedExercisesCol0": "Reps (ea)",
+			"AssignedExercisesCol1": "Weight (lbs)",
+			"AssignedExercisesCol2": "Rest (mins)",
+			"AssignedExercisesCol3": "Intensity (%)",
+			"AssignedExercisesExerciseId": "34318",
+			"AssignedExercisesId": "13752",
+			"AssignedExercisesNote": "",
+			"TrackedExercisesNote": "",
+			"AssignedExercisesOrder": 25,
+			"AssignedExercisesSuperNum": "0",
+			"AssignedExercisesSuperSet": "No",
+			"AssignedExercisesType": "Cool Down",
+			"AssignedExercisesWorkoutId": "270",
+			"Attrs": [{
+				"AssignedAttrsAttr0": 1,
+				"AssignedAttrsAttr1": 25,
+				"AssignedAttrsAttr2": "1:00",
+				"AssignedAttrsAttr3": 75,
+				"TrackedAttrsAttr0": 0,
+				"TrackedAttrsAttr1": 0,
+				"TrackedAttrsAttr2": "0:00",
+				"TrackedAttrsAttr3": 0,
+				"AssignedAttrsId": "42500",
+				"AssignedAttrsExerciseId": "13752",
+				"AssignedAttrsOrder": 0
+			}]
+		}]
+	}
+}
+```
+
+###### Example JSON Response
+
+If you include ```?return=object``` you get a complete object and not the response below.
+
+
+``` json
+{
+    "status": 1,
+    "data": {
+        "Id": 1805
+    }
+}
+```
