@@ -726,7 +726,7 @@ Here is a bigger example of the Payload : https://gist.github.com/cloudmanic/6b2
 	"AssignedWorkoutsClientId": "6",
 	"TrackedWorkoutsDate": "03\/08\/2017",
 	"Exercises": {
-		"warmup": [{
+		"Warmup": [{
 			"TrackedExercisesId": "17942",
 			"AssignedExercisesAttrType": "Distance",
 			"AssignedExercisesCol0": "Distance (mi)",
@@ -756,7 +756,7 @@ Here is a bigger example of the Payload : https://gist.github.com/cloudmanic/6b2
 				"AssignedAttrsOrder": 0
 			}]
 		}],
-		"normal": [{
+		"Normal": [{
 			"TrackedExercisesId": "17946",
 			"AssignedExercisesAttrType": "Reps",
 			"AssignedExercisesCol0": "Reps (ea)",
@@ -839,7 +839,7 @@ Here is a bigger example of the Payload : https://gist.github.com/cloudmanic/6b2
 				"AssignedAttrsOrder": 1
 			}]
 		}],
-		"cooldown": [{
+		"Cooldown": [{
 			"TrackedExercisesId": "17956",
 			"AssignedExercisesAttrType": "Reps",
 			"AssignedExercisesCol0": "Reps (ea)",
