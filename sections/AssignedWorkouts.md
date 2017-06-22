@@ -3,7 +3,7 @@
 Endpoints:
 
 - [Track Assigned Workout 100% Complete](#track-assgined-workout-100-complete)
-- [Get All Assigned Workout By Id](#get-all-assigned-workout-by-id)
+- [Get Assigned Workout By Id](#get-assigned-workout-by-id)
 - [Get All Assigned Workouts By User Id](#get-all-assigned-workouts-by-user-id)
 
 ## Track Assigned Workout 100% Complete
@@ -41,7 +41,7 @@ curl -X POST \
 }
 ```
 
-## Get All Assigned Workout By Id
+## Get Assigned Workout By Id
 
 We use this api call to get one particular Assigned workout 
 
