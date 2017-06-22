@@ -78,8 +78,6 @@ On a failed call the api response will be as follows.
 }
 ```
 
-
-
 # Pagination
 
 All api calls are limited to returning just 100 records. We use the page flag to get additional records. 
@@ -105,6 +103,26 @@ This api call will return the first 100 records. Now if we want the records betw
 
 ``` shell
 curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://elevationfit.com/api/v1/$ACCOUNT_ID/clients?page=2
+```
+
+# Ordering & Sorting
+
+All api calls that return more than one record supports an order and sort option.
+
+```updated_start_date=COLNAME``` and ```sort=asc|desc```
+
+``` shell
+curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://elevationfit.com/api/v1/$ACCOUNT_ID/trackedworkouts&order=TrackedWorkoutsUpdatedAt&sort=asc
+```
+
+# Filter By Updated Date
+
+All api calls that return more than one record support start and end parameters based on the UpdatedAt field. 
+
+```updated_start_date=XXXX-XX-XX``` and ```updated_end_date=XXXX-XX-XX```
+
+``` shell
+curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://elevationfit.com/api/v1/$ACCOUNT_ID/trackedworkouts?updated_start_date=2017-03-01&updated_end_date=2017-03-03
 ```
 
 # Handling errors
