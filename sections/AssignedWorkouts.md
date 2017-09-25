@@ -5,6 +5,8 @@ Endpoints:
 - [Track Assigned Workout 100% Complete](#track-assgined-workout-100-complete)
 - [Get Assigned Workout By Id](#get-assigned-workout-by-id)
 - [Get All Assigned Workouts By User Id](#get-all-assigned-workouts-by-user-id)
+- [Create New Assigned Workout Payload](#create-assigned-workout-payload)
+- [Delete Assigned Workout](#delete-addigned-workout)
 
 ## Track Assigned Workout 100% Complete
 
@@ -336,4 +338,548 @@ We use this api call to assigned Workouts by a particular user.
 	}],
 	"pages": 1
 }
+```
+
+## Create New Assigned Workout Payload
+
+This is the core api call to assign a workout. We post in a rather complex json object to this API. Best to see examples below. There currently is no validation on this API call. Make sure to post in a complete and correct object.
+
+This api call will return the ID (or new ID) of the assigned workout. If you would like more data you can include ```?return=object``` to the url and this API call will return a complete tracked workout object. 
+
+* `POST https://elevationfit.com/api/v1/4/assignedworkouts/payload`
+
+* `POST https://elevationfit.com/api/v1/4/assignedworkouts/payload?return=object`
+
+###### Curl Example
+
+``` shell
+curl -X POST \ 
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H 'Content-Type: application/json' \
+  -H 'User-Agent: MyApp (yourname@example.com)' \
+  -d '{ json object below..... }' \
+  https://elevationfit.com/api/v1/4/assignedworkouts/payload
+```
+
+###### JSON Payload Example
+
+Here is a bigger example of the Payload.
+
+``` json
+{
+
+	"AssignedWorkoutsProgramId": "3",
+	"AssignedWorkoutsClientId": "6",
+	"AssignedWorkoutsTrainerId": "6",
+	"AssignedWorkoutsProgGroup": "1",
+	"AssignedWorkoutsProgOrder": "3",
+	"AssignedWorkoutsName": "Chest And Abs (15 Rep Endurance)",
+	"AssignedWorkoutsSex": "Both",
+	"AssignedWorkoutsAgeGroup": "",
+	"AssignedWorkoutsPurpose": "",
+	"AssignedWorkoutsSystem": "",
+	"AssignedWorkoutsModality": "Set\/Rep Based",
+	"AssignedWorkoutsSkillLevel": "",
+	"AssignedWorkoutsPeriod": "0",
+	"AssignedWorkoutsRecovery": "0",
+	"AssignedWorkoutsPerWeek": "0",
+	"AssignedWorkoutsGroupsCsv": "Abdominals, Chest, Shoulder",
+	"AssignedWorkoutsExerciseTypesCsv": "Body Weight, Free Weight, Machine",
+	"AssignedWorkoutsEquipmentCsv": "Dumbbell, No Equip. Needed, Adjustable Pulley Machine",
+	"AssignedWorkoutsNote": "",
+	"AssignedWorkoutStartDate": "1969-12-30",
+	"AssignedWorkoutEndDate": "1969-12-30",
+	"AssignedWorkoutMon": "No",
+	"AssignedWorkoutTue": "No",
+	"AssignedWorkoutWed": "No",
+	"AssignedWorkoutThr": "No",
+	"AssignedWorkoutFri": "No",
+	"AssignedWorkoutSat": "No",
+	"AssignedWorkoutSun": "No",
+	"AssignedWorkoutPreformDate": "1969-12-30",
+	"AssignedWorkoutsOrder": "0",
+	"Exercises": {
+		"Warmup": [{
+			"AssignedExercisesType": "Warmup",
+			"AssignedExercisesAttrType": "Distance",
+			"AssignedExercisesCol0": "Distance (mi)",
+			"AssignedExercisesCol1": "Time (mins)",
+			"AssignedExercisesCol2": "Rest (mins)",
+			"AssignedExercisesCol3": "Intensity (%)",
+			"AssignedExercisesSuperSet": "No",
+			"AssignedExercisesSuperNum": "0",
+			"AssignedExercisesNote": "asdfasdf",
+			"AssignedExercisesExerciseId": "290",
+			"AssignedExercisesOrder": "0",
+			"Attrs": [{
+				"AssignedAttrsAttr0": "0.00",
+				"AssignedAttrsAttr1": "600.00",
+				"AssignedAttrsAttr2": "30.00",
+				"AssignedAttrsAttr3": "75.00",
+				"AssignedAttrsOrder": "0"
+			}]
+		}, {
+			"AssignedExercisesType": "Warmup",
+			"AssignedExercisesAttrType": "Reps",
+			"AssignedExercisesCol0": "Reps (ea)",
+			"AssignedExercisesCol1": "Weight (lbs)",
+			"AssignedExercisesCol2": "Rest (mins)",
+			"AssignedExercisesCol3": "Time (mins)",
+			"AssignedExercisesSuperSet": "No",
+			"AssignedExercisesSuperNum": "0",
+			"AssignedExercisesNote": "",
+			"AssignedExercisesExerciseId": "1465",
+			"AssignedExercisesOrder": "1",
+			"Attrs": [{
+				"AssignedAttrsAttr0": "10.00",
+				"AssignedAttrsAttr1": "0.00",
+				"AssignedAttrsAttr2": "30.00",
+				"AssignedAttrsAttr3": "75.00",
+				"AssignedAttrsOrder": "0"
+			}, {
+				"AssignedAttrsAttr0": "10.00",
+				"AssignedAttrsAttr1": "0.00",
+				"AssignedAttrsAttr2": "30.00",
+				"AssignedAttrsAttr3": "75.00",
+				"AssignedAttrsOrder": "2"
+			}, {
+				"AssignedAttrsAttr0": "10.00",
+				"AssignedAttrsAttr1": "0.00",
+				"AssignedAttrsAttr2": "30.00",
+				"AssignedAttrsAttr3": "75.00",
+				"AssignedAttrsOrder": "3"
+			}]
+		}],
+		"Normal": [{
+			"type": "superset",
+			"data": [{
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Reps",
+				"AssignedExercisesCol0": "Reps (ea)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "Yes",
+				"AssignedExercisesSuperNum": "2",
+				"AssignedExercisesNote": "324234",
+				"AssignedExercisesExerciseId": "3094",
+				"AssignedExercisesOrder": "2",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "25.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "25.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "25.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}, {
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Reps",
+				"AssignedExercisesCol0": "Reps (ea)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "Yes",
+				"AssignedExercisesSuperNum": "2",
+				"AssignedExercisesNote": "asdf",
+				"AssignedExercisesExerciseId": "80",
+				"AssignedExercisesOrder": "3",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "55.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "55.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "55.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}]
+		}, {
+			"type": "superset",
+			"data": [{
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Reps",
+				"AssignedExercisesCol0": "Reps (ea)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "Yes",
+				"AssignedExercisesSuperNum": "6",
+				"AssignedExercisesNote": "",
+				"AssignedExercisesExerciseId": "3095",
+				"AssignedExercisesOrder": "4",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "25.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "25.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "1"
+				}, {
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "25.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "25.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}, {
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Reps",
+				"AssignedExercisesCol0": "Reps (ea)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "Yes",
+				"AssignedExercisesSuperNum": "6",
+				"AssignedExercisesNote": "",
+				"AssignedExercisesExerciseId": "81",
+				"AssignedExercisesOrder": "5",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "60.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "60.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "1"
+				}, {
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "60.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "60.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}]
+		}, {
+			"type": "superset",
+			"data": [{
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Time",
+				"AssignedExercisesCol0": "Time (mins)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "Yes",
+				"AssignedExercisesSuperNum": "4",
+				"AssignedExercisesNote": "",
+				"AssignedExercisesExerciseId": "257",
+				"AssignedExercisesOrder": "6",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "60.00",
+					"AssignedAttrsAttr1": "0.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "60.00",
+					"AssignedAttrsAttr1": "0.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "1"
+				}, {
+					"AssignedAttrsAttr0": "60.00",
+					"AssignedAttrsAttr1": "0.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "60.00",
+					"AssignedAttrsAttr1": "0.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}, {
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Reps",
+				"AssignedExercisesCol0": "Reps (ea)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "Yes",
+				"AssignedExercisesSuperNum": "4",
+				"AssignedExercisesNote": "",
+				"AssignedExercisesExerciseId": "82",
+				"AssignedExercisesOrder": "7",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "50.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "50.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "1"
+				}, {
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "50.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "18.00",
+					"AssignedAttrsAttr1": "50.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}]
+		}, {
+			"type": "normal",
+			"data": {
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Reps",
+				"AssignedExercisesCol0": "Reps (ea)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "No",
+				"AssignedExercisesSuperNum": "0",
+				"AssignedExercisesNote": "",
+				"AssignedExercisesExerciseId": "249",
+				"AssignedExercisesOrder": "8",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "0.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "0.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "0.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "0.00",
+					"AssignedAttrsOrder": "1"
+				}, {
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "0.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "0.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "20.00",
+					"AssignedAttrsAttr1": "0.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "0.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}
+		}, {
+			"type": "superset",
+			"data": [{
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Reps",
+				"AssignedExercisesCol0": "Reps (ea)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "Yes",
+				"AssignedExercisesSuperNum": "5",
+				"AssignedExercisesNote": "",
+				"AssignedExercisesExerciseId": "346",
+				"AssignedExercisesOrder": "9",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "50.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "50.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "1"
+				}, {
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "50.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "50.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}, {
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Reps",
+				"AssignedExercisesCol0": "Reps (ea)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "Yes",
+				"AssignedExercisesSuperNum": "5",
+				"AssignedExercisesNote": "",
+				"AssignedExercisesExerciseId": "2798",
+				"AssignedExercisesOrder": "10",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "65.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "65.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "1"
+				}, {
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "65.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "65.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}, {
+				"AssignedExercisesType": "Normal",
+				"AssignedExercisesAttrType": "Reps",
+				"AssignedExercisesCol0": "Reps (ea)",
+				"AssignedExercisesCol1": "Weight (lbs)",
+				"AssignedExercisesCol2": "Rest (mins)",
+				"AssignedExercisesCol3": "Intensity (%)",
+				"AssignedExercisesSuperSet": "Yes",
+				"AssignedExercisesSuperNum": "5",
+				"AssignedExercisesNote": "",
+				"AssignedExercisesExerciseId": "347",
+				"AssignedExercisesOrder": "11",
+				"Attrs": [{
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "40.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "0"
+				}, {
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "40.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "1"
+				}, {
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "40.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "2"
+				}, {
+					"AssignedAttrsAttr0": "15.00",
+					"AssignedAttrsAttr1": "40.00",
+					"AssignedAttrsAttr2": "30.00",
+					"AssignedAttrsAttr3": "75.00",
+					"AssignedAttrsOrder": "3"
+				}]
+			}]
+		}],
+		"CoolDown": [{
+			"AssignedExercisesType": "Cool Down",
+			"AssignedExercisesAttrType": "Reps",
+			"AssignedExercisesCol0": "Reps (ea)",
+			"AssignedExercisesCol1": "Weight (lbs)",
+			"AssignedExercisesCol2": "Rest (mins)",
+			"AssignedExercisesCol3": "Intensity (%)",
+			"AssignedExercisesSuperSet": "No",
+			"AssignedExercisesSuperNum": "0",
+			"AssignedExercisesNote": "",
+			"AssignedExercisesExerciseId": "3097",
+			"AssignedExercisesOrder": "12",
+			"Attrs": [{
+				"AssignedAttrsAttr0": "1.00",
+				"AssignedAttrsAttr1": "25.00",
+				"AssignedAttrsAttr2": "60.00",
+				"AssignedAttrsAttr3": "75.00",
+				"AssignedAttrsOrder": "1"
+			}]
+		}, {
+			"AssignedExercisesType": "Cool Down",
+			"AssignedExercisesAttrType": "Reps",
+			"AssignedExercisesCol0": "Reps (ea)",
+			"AssignedExercisesCol1": "Weight (lbs)",
+			"AssignedExercisesCol2": "Rest (mins)",
+			"AssignedExercisesCol3": "Intensity (%)",
+			"AssignedExercisesSuperSet": "No",
+			"AssignedExercisesSuperNum": "0",
+			"AssignedExercisesNote": "",
+			"AssignedExercisesExerciseId": "34314",
+			"AssignedExercisesOrder": "13",
+			"Attrs": [{
+				"AssignedAttrsAttr0": "1.00",
+				"AssignedAttrsAttr1": "25.00",
+				"AssignedAttrsAttr2": "60.00",
+				"AssignedAttrsAttr3": "75.00",
+				"AssignedAttrsOrder": "1"
+			}]
+		}]
+	}
+}
+```
+
+## Delete Assigned Workout
+
+This is a DELETE method for removing an assigned workout. 
+
+* `DELETE https://elevationfit.com/api/v1/4/assignedworkouts/{AssignedWorkoutsId}`
+
+###### Curl Example
+
+``` shell
+curl -X DELETE \ 
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H 'Content-Type: application/json' \
+  -H 'User-Agent: MyApp (yourname@example.com)' \
+  -d '{ json object below..... }' \
+  https://elevationfit.com/api/v1/4/assignedworkouts/{AssignedWorkoutsId}
 ```
