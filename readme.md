@@ -137,6 +137,8 @@ If the Elevation Fitness API is having trouble, you might get a 5xx error. `500`
 
 - [Tracked Workouts](https://github.com/elevationfitness/elevationfit.com-api-docs/blob/master/sections/TrackedWorkouts.md)
 
+- [Template Workouts](https://github.com/elevationfitness/elevationfit.com-api-docs/blob/master/sections/TemplateWorkouts.md)
+
 # License
 
 These API docs are licensed under [Creative Commons (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0/). Please share, remix, and distribute as you see fit.
