@@ -5,6 +5,7 @@ Endpoints:
 - [Get All Template Workouts](#get-all-template-workouts)
 - [Get Template Workout By Id](#get-template-workout-by-id)
 - [Create New Template Workout - Payload](#create-new-template-workout-payload)
+- [Delete Template Workout](#delete-template-workout)
 
 
 ## Get All Template Workouts
@@ -1532,4 +1533,21 @@ If you include ```?return=object``` you get a complete object and not the respon
         "Id": 1805
     }
 }
+```
+
+## Delete Template Workout
+
+This is a DELETE method for removing an template workout. 
+
+* `DELETE https://elevationfit.com/api/v1/4/templateworkouts/{TemplateWorkoutsId}`
+
+###### Curl Example
+
+``` shell
+curl -X DELETE \ 
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H 'Content-Type: application/json' \
+  -H 'User-Agent: MyApp (yourname@example.com)' \
+  -d '{ json object below..... }' \
+  https://elevationfit.com/api/v1/4/templateworkouts/{TemplateWorkoutsId}
 ```
