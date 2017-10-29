@@ -17,7 +17,9 @@ This will return all Exercises that your access token has visibility to.
 
 | key        | value           | Note  |
 | ---------- |:---------------:| -----:|
-| only      | library | Returns only exercises in your library. Elevation exercises and the ones you added |
+| account_only      | true | Returns only exercises in your library. Elevation exercises and the ones you added |
+
+* `GET https://elevationfit.com/api/v1/xxx/exercises?account_only=true`
 
 ## Get Exercise By Id
 
