@@ -26,6 +26,8 @@ This will return all Exercises that your access token has visibility to.
 
 Use this to get an array of all exercise ids within the system this account has access to. This is useful for syncing up deletes. Make this API call to get an array of Ids -- Then compare this array against the Ids in the local database. If you find an ID in your local database that is not in this list you can assume it has been deleted. 
 
+There is no paging in this API call. You get back everything.
+
 * `GET https://elevationfit.com/api/v1/xxx/exercises/ids`
 
 ## Get Exercise By Id
