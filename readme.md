@@ -4,7 +4,7 @@ Welcome to the Elevation Fitness API! If you're looking to integrate your applic
 
 # How Do You Authenticate With Our API?
 
-(Details Coming Soon.....)
+Please contact support@elevationfit.com to obtain a personal access token.
 
 # Making Requests
 
@@ -131,7 +131,7 @@ If the Elevation Fitness API is having trouble, you might get a 5xx error. `500`
 
 # Api Endpoints
 
-- [Users](https://github.com/elevationfitness/elevationfit.com-api-docs/blob/master/sections/Users.md) 
+- [Users](/users) 
 
 - [Exercises](https://github.com/elevationfitness/elevationfit.com-api-docs/blob/master/sections/Exercises.md) 
 

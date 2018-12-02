@@ -1,4 +1,4 @@
-# Tracked Workouts
+# Users
 
 Endpoints:
 
