@@ -1,13 +1,5 @@
 # Template Workouts
 
-Endpoints:
-
-- [Get All Template Workouts](#get-all-template-workouts)
-- [Get Template Workout By Id](#get-template-workout-by-id)
-- [Create New Template Workout - Payload](#create-new-template-workout-payload)
-- [Delete Template Workout](#delete-template-workout)
-
-
 ## Get All Template Workouts
 
 This typically is a rather big call. This will return all Template Workouts that your access token has visibility to.

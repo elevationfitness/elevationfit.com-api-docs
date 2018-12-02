@@ -1,15 +1,5 @@
 # Tracked Workouts
 
-Endpoints:
-
-- [Get All Tracked Workouts](#get-all-tracked-workouts)
-- [Get Tracked Workout By Id](#get-tracked-workout-by-id)
-- [Get All Tracked Workouts By User Id](#get-all-tracked-workouts-by-user-id)
-- [Get All Tracked Workout By Assigned Workout Id And Date](#get-all-tracked-workouts-by-assigned-workout-id-and-date)
-- [Return A Complete Tracked Workout Object](#return-a-complete-tracked-workout-object)
-- [Create New Tracked Workout - Payload](#create-new-tracked-workout-payload)
-
-
 ## Get All Tracked Workouts
 
 This typically is a rather big call. This will return all Tracked Workouts that your access token has visibility to. If you are an account admin this will be every Tracked Workout in the system.

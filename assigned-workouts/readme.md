@@ -1,13 +1,5 @@
 # Assigned Workouts
 
-Endpoints:
-
-- [Track Assigned Workout 100% Complete](#track-assgined-workout-100-complete)
-- [Get Assigned Workout By Id](#get-assigned-workout-by-id)
-- [Get All Assigned Workouts By User Id](#get-all-assigned-workouts-by-user-id)
-- [Create New Assigned Workout Payload](#create-assigned-workout-payload)
-- [Delete Assigned Workout](#delete-addigned-workout)
-
 ## Track Assigned Workout 100% Complete
 
 Here we can track an Assigned Workout to 100% complete. This api call returns the Id of the newly tracked workout.
