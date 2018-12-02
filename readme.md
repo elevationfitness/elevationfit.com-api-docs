@@ -133,15 +133,15 @@ If the Elevation Fitness API is having trouble, you might get a 5xx error. `500`
 
 - [Users](/users) 
 
-- [Exercises](/exercises.md) 
+- [Exercises](/exercises) 
 
-- [Programs](/programs.md) 
+- [Programs](/programs) 
 
-- [Assigned Workouts](https://github.com/elevationfitness/elevationfit.com-api-docs/blob/master/sections/AssignedWorkouts.md)
+- [Assigned Workouts](/assigned-workouts)
 
-- [Tracked Workouts](https://github.com/elevationfitness/elevationfit.com-api-docs/blob/master/sections/TrackedWorkouts.md)
+- [Tracked Workouts](/tracked-workouts)
 
-- [Template Workouts](https://github.com/elevationfitness/elevationfit.com-api-docs/blob/master/sections/TemplateWorkouts.md)
+- [Template Workouts](/template-workouts)
 
 # License
 
