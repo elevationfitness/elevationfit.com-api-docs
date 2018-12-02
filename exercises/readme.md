@@ -1,12 +1,5 @@
 # Tracked Workouts
 
-Endpoints:
-
-- [Get All Exercises](#get-all-exercises)
-- [Get All Exercise Ids](#get-exercise-ids)
-- [Get Exercise By Id](#get-exercise-by-id)
-
-
 ## Get All Exercises
 
 This will return all Exercises that your access token has visibility to.

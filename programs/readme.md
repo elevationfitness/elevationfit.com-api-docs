@@ -1,9 +1,4 @@
-# Tracked Workouts
-
-Endpoints:
-
-- [Delete Workout Group](#delete-workout-group)
-
+# Programs
 
 ## Delete Workout Group
 

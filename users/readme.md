@@ -1,10 +1,5 @@
 # Users
 
-Endpoints:
-
-- [Get Me](#get-me)
-- [Update TOS Accept](#update-tos-accept)
-
 ## Get Me
 
 Returns a JSON object of with information on the logged in user.
